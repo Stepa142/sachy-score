@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šachový Tracker Skóre</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Šachový Tracker Skóre</h1>
+        <div class="score-cards">
+            <div class="player-card">
+                <h2>Chajvy</h2>
+                <p>Výhry: <span id="chajvy-wins">0</span></p>
+                <p>Úspěšnost: <span id="chajvy-rate">0</span>%</p>
+                <button onclick="addWin('chajvy')">Přidat výhru</button>
+                <button class="remove" onclick="removeWin('chajvy')">Odebrat výhru</button>
+            </div>
+            
+            <div class="player-card">
+                <h2>Timy</h2>
+                <p>Výhry: <span id="timy-wins">0</span></p>
+                <p>Úspěšnost: <span id="timy-rate">0</span>%</p>
+                <button onclick="addWin('timy')">Přidat výhru</button>
+                <button class="remove" onclick="removeWin('timy')">Odebrat výhru</button>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="winChart"></canvas>
+        </div>
+
+        <div class="stats-container">
+            <h2>Statistiky her</h2>
+            <p>Celkem her: <span id="total-games">0</span></p>
+            <button onclick="resetStats()">Resetovat statistiky</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
